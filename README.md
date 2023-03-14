@@ -24,7 +24,7 @@ Additionally, cross-validation methods were used to evaluate the models on diffe
 ## Outlier Treatment - Capping
 
 #### Before Outlier Treatment
-![Before Outlier](https://raw.github.com/nise757/wine-quality-prediction/Outputs/before%20outlier.png)
+![before outlier](https://user-images.githubusercontent.com/124890367/225134790-2034e285-71f9-4e48-988f-c28cbfd1c0b0.png)
 
 #### After Outlier Treatment
 ![After Outlier](https://github.com/nise757/wine-quality-prediction/blob/main/Outputs/after%20outlier.png)
