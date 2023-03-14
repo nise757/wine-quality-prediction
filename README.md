@@ -48,6 +48,7 @@ Additionally, cross-validation methods were used to evaluate the models on diffe
 ![PartialLS](https://user-images.githubusercontent.com/124890367/225135216-ff49409d-88d0-43cb-b74d-26e0335e94bb.png)
 
 ## LASSO Regression
+par(mfrow(c(1,2))
 ![lasso1](https://user-images.githubusercontent.com/124890367/225135472-30e3579f-9cff-44f8-800f-3896ec8c4c94.png)
 ![lasso2](https://user-images.githubusercontent.com/124890367/225135505-c159b5d9-fec1-4a7f-8ac6-9dd02d315535.png)
 
