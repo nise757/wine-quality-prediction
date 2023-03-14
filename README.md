@@ -2,7 +2,8 @@
 
 This project focuses on predicting wine quality from a combination of data from red and white wines of the Portuguese wine "Vinho Verde". 
 Combining the two data sets and cleaning it for outliers - [Capping](https://www.educative.io/answers/how-to-cap-outliers-from-a-series-dataframe-column-in-pandas). Various subset selection methods were experimented with to come up with the final model. 
-Additionally, cross-validation methods were used to evaluate the models on different sets of training and test data. The final model that most accurately predicts wine quality is a **9-parameter linear regression model** with parameters determined via best subset selection.
+
+Additionally, cross-validation methods were used to evaluate the models on different sets of training and test data. The final model that most accurately predicts wine quality is a *9-parameter linear regression model* with parameters determined via best subset selection.
 
 # Parameters
 
@@ -22,9 +23,9 @@ Additionally, cross-validation methods were used to evaluate the models on diffe
 
 ## Outlier Treatment - Capping
 
-![Before Outlier] (../main/Outputs/before outlier.png)
+![Before Outlier](https://github.com/nise757/wine-quality-prediction/blob/main/Outputs/before%20outlier.png)
 Before Outlier Treatment
 
-![After Outlier] (../main/Outputs/after outlier.png)
+![After Outlier](https://github.com/nise757/wine-quality-prediction/blob/main/Outputs/after%20outlier.png)
 After Outlier Treatment
 
