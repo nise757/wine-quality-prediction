@@ -23,9 +23,15 @@ Additionally, cross-validation methods were used to evaluate the models on diffe
 
 ## Outlier Treatment - Capping
 
-![Before Outlier](https://github.com/nise757/wine-quality-prediction/blob/main/Outputs/before%20outlier.png)
-Before Outlier Treatment
+#### Before Outlier Treatment
+![Before Outlier](https://raw.github.com/nise757/wine-quality-prediction/Outputs/before outlier.png)
 
+#### After Outlier Treatment
 ![After Outlier](https://github.com/nise757/wine-quality-prediction/blob/main/Outputs/after%20outlier.png)
-After Outlier Treatment
+
+## Correlation Plot
+![Correlation](https://github.com/nise757/wine-quality-prediction/blob/main/Outputs/corrplot.png)
+
+## Principal Components Regression
+![PCR]()
 
