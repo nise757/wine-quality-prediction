@@ -1,12 +1,12 @@
 # Wine Quality Prediction
 
 This project focuses on predicting wine quality from a combination of data from red and white wines of the Portuguese wine "Vinho Verde". 
-Combining the two data sets and cleaning it for outliers - [Capping](https://www.educative.io/answers/how-to-cap-outliers-from-a-series-dataframe-column-in-pandas), various subset selection methods were experimented with to come up with the final model. 
+Combining the two data sets and cleaning it for outliers - [Capping](https://www.educative.io/answers/how-to-cap-outliers-from-a-series-dataframe-column-in-pandas). Various subset selection methods were experimented with to come up with the final model. 
 Additionally, cross-validation methods were used to evaluate the models on different sets of training and test data. The final model that most accurately predicts wine quality is a **9-parameter linear regression model** with parameters determined via best subset selection.
 
 # Parameters
 
-1.Fixed Acidity
+1. Fixed Acidity \newline
 2. Volatile acidity
 3. Citric acid
 4. Residual sugar
@@ -21,5 +21,10 @@ Additionally, cross-validation methods were used to evaluate the models on diffe
 # Output Plots
 
 ## Outlier Treatment - Capping
-![Before Treatment](https://user-images.githubusercontent.com/124890367/225128114-3bfed5ea-f612-4cfe-81d0-86049614c762.png)
+
+![Before Outlier](../main/Outputs/before outlier.png)
+Before Outlier Treatment
+
+![After Outlier](../main/Outputs/after outlier.png)
+After Outlier Treatment
 
