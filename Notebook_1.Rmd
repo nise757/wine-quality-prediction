@@ -64,7 +64,9 @@ wine_data <- wd_capped
 
 <!-- Create a scatterplot matrix -->
 ```{r}
-pairs(wine_data)
+library(corrplot)
+corrplot(cor(wine_data))
+#pairs(wine_data)
 ```
 
 ## Summary of the data
