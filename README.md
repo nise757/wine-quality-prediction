@@ -19,3 +19,6 @@ Additionally, cross-validation methods were used to evaluate the models on diffe
 11. Alcohol content
 
 # Results
+
+### Outlier Removal
+
