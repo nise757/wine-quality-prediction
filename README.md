@@ -18,7 +18,8 @@ Additionally, cross-validation methods were used to evaluate the models on diffe
 10. Sulphates
 11. Alcohol content
 
-# Results
+# Output Plots
 
-### Outlier Removal
+## Outlier Treatment - Capping
+![Before Treatment](https://user-images.githubusercontent.com/124890367/225128114-3bfed5ea-f612-4cfe-81d0-86049614c762.png)
 
