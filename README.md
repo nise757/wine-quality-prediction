@@ -6,7 +6,7 @@ Additionally, cross-validation methods were used to evaluate the models on diffe
 
 # Parameters
 
-1. Fixed Acidity \newline
+1. Fixed Acidity
 2. Volatile acidity
 3. Citric acid
 4. Residual sugar
@@ -22,9 +22,9 @@ Additionally, cross-validation methods were used to evaluate the models on diffe
 
 ## Outlier Treatment - Capping
 
-![Before Outlier](../main/Outputs/before outlier.png)
+![Before Outlier] (../main/Outputs/before outlier.png)
 Before Outlier Treatment
 
-![After Outlier](../main/Outputs/after outlier.png)
+![After Outlier] (../main/Outputs/after outlier.png)
 After Outlier Treatment
 
