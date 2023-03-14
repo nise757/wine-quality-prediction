@@ -1,0 +1,477 @@
+---
+title: "MSE 5740 Final Project Code"
+output:
+  html_document:
+    df_print: paged
+  html_notebook: default
+  pdf_document: default
+---
+
+# Data Processing
+
+## Load the data
+```{r}
+wine_data = read.csv("winequality-all.csv", header = T, na.strings = "?", stringsAsFactors = T)
+wine_data$color <- factor(wine_data$color, levels=c(1, 0), labels=c('R', 'W'))
+
+drop <- c("color")
+wine_data = wine_data[,!(names(wine_data) %in% drop)]
+```
+
+## Capping
+
+```{r}
+library(scales)
+wine_data$fixed.acidity <- squish(wine_data$fixed.acidity, quantile(wine_data$fixed_acidity, c(.05, .95)))
+
+wd_capped <- wine_data
+
+varlist <- names(wine_data)
+# varlist <- varlist[-length(varlist)]
+
+for (i in varlist) {
+    var <- eval(parse(text = paste0("wine_data$", i)))
+    var <- squish(var, quantile(var, c(.05, .95)))
+}
+
+
+wd_capped$fixed.acidity <- squish(wd_capped$fixed.acidity, quantile(wd_capped$fixed_acidity, c(.05, .95)))
+wd_capped$volatile.acidity <- squish(wd_capped$volatile.acidity, quantile(wd_capped$volatile.acidity, c(.05, .95)))    
+wd_capped$citric.acid<- squish(wd_capped$citric.acid, quantile(wd_capped$citric.acid, c(.05, .95)))          
+wd_capped$residual.sugar <- squish(wd_capped$residual.sugar, quantile(wd_capped$residual.sugar, c(.05, .95)))       
+wd_capped$chlorides <- squish(wd_capped$chlorides, quantile(wd_capped$chlorides, c(.05, .95)))            
+wd_capped$free.sulfur.dioxide <- squish(wd_capped$free.sulfur.dioxide, quantile(wd_capped$free.sulfur.dioxide, c(.05, .95)))  
+wd_capped$total.sulfur.dioxide <- squish(wd_capped$total.sulfur.dioxide, quantile(wd_capped$total.sulfur.dioxide, c(.05, .95))) 
+wd_capped$density <- squish(wd_capped$density, quantile(wd_capped$density, c(.05, .95)))
+wd_capped$pH <- squish(wd_capped$pH, quantile(wd_capped$pH, c(.05, .95)))                  
+wd_capped$sulphates <- squish(wd_capped$sulphates, quantile(wd_capped$sulphates, c(.05, .95)))           
+wd_capped$alcohol <- squish(wd_capped$alcohol, quantile(wd_capped$alcohol, c(.05, .95)))   
+wd_capped$quality <- squish(wd_capped$quality, quantile(wd_capped$quality, c(.05, .95))) 
+
+# We compare the dimensions of the dataset before and after outlier removal
+
+dim(wine_data)
+dim(wd_capped)
+
+dim(wine_data)[1] - dim(wd_capped)[1]
+boxplot(wine_data)
+boxplot(wd_capped)
+
+wine_data <- wd_capped
+```
+
+
+
+<!-- Create a scatterplot matrix -->
+```{r}
+pairs(wine_data)
+```
+
+## Summary of the data
+```{r}
+summary(wine_data)
+```
+
+# Removal of outliers (Interquartile range)
+
+
+To begin, we must first identify the outliers in a dataset; typically, two methods are available.
+1. z-scores
+2. interquartile range
+
+## Description of methods
+
+## z-score method
+
+The z-score indicates the number of standard deviations a given value deviates from the mean. A z-score is calculated using the following formula:
+
+$$z = (X – \mu) / \sigma$$
+where:
+
+$X$ is a single raw data value
+
+$\mu$ is the population mean
+
+$\sigma$ is the population standard deviation
+
+If an observation’s z-score is less than -3 or larger than 3, it’s considered an outlier.
+
+We implement this method below:
+```{r}
+z_scores <- as.data.frame(sapply(wine_data, function(wine_data) (abs(wine_data-mean(wine_data))/sd(wine_data))))    
+no_outliers <- z_scores[!rowSums(z_scores>3), ]
+# head(no_outliers)
+dim(wine_data)
+dim(no_outliers)
+
+dim(wine_data)[1] - dim(no_outliers)[1]
+
+boxplot(no_outliers)
+
+```
+
+With the z-score method we see that we have 508 less observations in the dataset
+
+## Interquartile range method
+
+In a dataset, it is the difference between the 75th percentile (Q3) and the 25th percentile (Q1).
+
+The interquartile range (IQR) is a measurement of the spread of values in the middle 50%.
+
+If an observation is 1.5 times the interquartile range more than the third quartile (Q3) or 1.5 times the interquartile range less than the first quartile (Q1), it is considered an outlier (Q1).
+
+```{r}
+varlist <- names(wine_data)
+# varlist <- varlist[-length(varlist)]
+
+for (i in varlist) {
+    var <- eval(parse(text = paste0("wine_data$", i)))
+    Q1 <- quantile(var, 0.25)
+    Q3 <- quantile(var, 0.75)
+    iqr <- IQR(var)
+    no_outliers <- subset(wine_data, var > (Q1 - 1.5*iqr) & var < (Q3 + 1.5*iqr) )
+    
+}
+
+# We compare the dimensions of the dataset before and after outlier removal
+dim(wine_data)
+dim(no_outliers)
+
+dim(wine_data)[1] - dim(no_outliers)[1]
+boxplot(no_outliers)
+```
+With the z-score method we see that we have 228 less observations in the dataset
+
+We should probably figure out which method we want to use at some point.
+
+# Linear model selection and regularization
+
+## Subset selection methods
+
+### Best Subset Selection
+```{r}
+library(leaps)
+# Perform best subset selection using the regsubsets() function included
+# in the leaps library
+regfit.full <- regsubsets(quality ~ ., wine_data, nvmax = 11)
+
+# Summary of the full best subset selection model, the models with 1-11 variables
+# are shown below
+# shows the best set of variables for each model size
+summary(regfit.full)
+```
+
+We now check to the different fitting criterion to see which model is best
+
+
+```{r}
+reg.summary = summary(regfit.full)
+```
+
+```{r}
+par(mfrow = c(1, 3))
+plot(reg.summary$adjr2, xlab = "Number of Variables" ,
+ylab = "Adjusted RSq" , type = "l")
+
+plot (reg.summary$cp, xlab = "Number of Variables" ,
+ylab = "Cp" , type = "l")
+
+plot (reg.summary$bic, xlab = "Number of Variables" ,
+ylab = "BIC" , type = "l")
+```
+
+## Find the ideal number of predictors using the different criterion
+
+```{r}
+# Find the number of predictors that corresponds to the maximum adjusted Rsq val
+which.max(reg.summary$adjr2)
+# Find the number of predictors that corresponds to the minimum adjusted Cp val
+which.min(reg.summary$cp)
+# Find the number of predictors that corresponds to the minimum adjusted BIC val
+which.min(reg.summary$bic)
+```
+## Plot which models indicate the smallest statistic
+```{r}
+plot(regfit.full, scale = "adjr2")
+plot(regfit.full, scale = "Cp")
+plot(regfit.full, scale = "bic")
+```
+
+## Choosing among models using the validation-set approach and cross-validation
+
+### Cross validation
+
+```{r}
+set.seed(1)
+train <- sample(c(TRUE, FALSE), nrow(wine_data), replace = TRUE)
+test <- (!train)
+```
+
+```{r}
+regfit.best <- regsubsets(quality ~ ., data = wine_data[train, ], nvmax = 11)
+test.mat <- model.matrix(quality ~ ., data = wine_data[test, ])
+```
+
+```{r}
+val.errors <- rep(0, 11)
+
+
+for (i in 1:11) {
+    coefi <- coef(regfit.best, id = i)
+    pred <- test.mat[, names(coefi)] %*% coefi
+    val.errors[i] <- mean((wine_data$quality[test] - pred)^2)
+    
+}
+```
+
+```{r}
+val.errors
+which.min(val.errors)
+```
+We find that the best model is on that contains 10 variables. Therefore we choose
+to use this model in our analysis.
+
+
+```{r}
+predict.regsubsets <- function(object, newdata, id , ...) {
+form <- as.formula(object$call[[2]])
+mat <- model.matrix(form, newdata )
+coefi <- coef(object, id = id)
+xvars <- names (coefi)
+mat[, xvars ] %*% coefi
+}
+```
+
+
+```{r}
+regfit.best <- regsubsets(quality ~ ., data = wine_data, nvmax = 11)
+coef(regfit.best, 10)
+```
+
+Now try to choose amongst the models of different sizes using cross-validation (k-fold)
+10-folds
+
+Must perform best subset selection with each of the k training sets.
+
+```{r}
+k <- 5
+n <- nrow(wine_data)
+set.seed(1)
+folds <- sample(rep(1:k, length = n))
+cv.errors <- matrix(NA, k, 11, dimnames = list(NULL, paste(1:11)))
+```
+
+```{r}
+for (j in 1:k) {
+    best.fit <- regsubsets(quality ~ ., data = wine_data[folds != j, ], nvmax = 11)
+    
+    for (i in 1:11) {
+        pred <- predict(best.fit, wine_data[folds == j, ], id = i)
+        cv.errors[j, i] <- mean((wine_data$quality[folds == j] - pred)^2)
+    }
+}
+```
+
+```{r}
+mean.cv.errors <- apply(cv.errors, 2, mean)
+mean.cv.errors
+min(mean.cv.errors)
+```
+
+We see that cross validation selects a 9 variable model.
+
+We now perform best subset selection on the full data set in order to obtain this
+model
+
+```{r}
+reg.best <- regsubsets(quality ~ ., data = wine_data, nvmax = 11)
+coef(reg.best, 9)
+```
+
+
+## Ridge-regression and the lasso
+
+## Ridge-regression
+```{r}
+set.seed(1)
+x <- model.matrix(quality ~ ., wine_data)[, -1]
+y <- wine_data$quality
+train <- sample(1:nrow(x), nrow(x)/2)
+test <- (-train)
+y.test <- y[test]
+```
+
+```{r}
+library(glmnet)
+grid <- 10^seq(10, -2, length = 100)
+```
+
+```{r}
+ridge.mod <- glmnet(x[train, ], y[train], alpha = 0, lambda = grid)
+plot(ridge.mod)
+```
+
+```{r}
+set.seed(1)
+cv.out <- cv.glmnet(x[train, ], y[train], alpha = 0)
+plot(cv.out)
+```
+
+```{r}
+bestlam <- cv.out$lambda.min
+lasso.pred <- predict(ridge.mod, s = bestlam, newx = x[test, ])
+mean((lasso.pred - y.test)^2)
+```
+
+```{r}
+out <- glmnet(x, y, alpha = 0, lambda = grid)
+ridge.coef <- predict(out, type = "coefficients", s = bestlam)[1:12, ]
+ridge.coef
+```
+
+
+```{r}
+ridge.coef[ridge.coef != 0]
+```
+
+
+## The lasso
+
+```{r}
+set.seed(1)
+x <- model.matrix(quality ~ ., wine_data)[, -1]
+y <- wine_data$quality
+train <- sample(1:nrow(x), nrow(x)/2)
+test <- (-train)
+y.test <- y[test]
+```
+
+```{r}
+library(glmnet)
+grid <- 10^seq(10, -2, length = 100)
+```
+
+```{r}
+lasso.mod <- glmnet(x[train, ], y[train], alpha = 1, lambda = grid)
+plot(lasso.mod)
+```
+
+```{r}
+set.seed(1)
+cv.out <- cv.glmnet(x[train, ], y[train], alpha = 1)
+plot(cv.out)
+```
+
+```{r}
+bestlam <- cv.out$lambda.min
+lasso.pred <- predict(lasso.mod, s = bestlam, newx = x[test, ])
+mean((lasso.pred - y.test)^2)
+```
+
+```{r}
+out <- glmnet(x, y, alpha = 1, lambda = grid)
+lasso.coef <- predict(out, type = "coefficients", s = bestlam)[1:12, ]
+lasso.coef
+```
+
+
+```{r}
+lasso.coef[lasso.coef != 0]
+```
+
+```{r}
+lasso.coef[lasso.coef == 0]
+```
+
+## Princpal components regression
+
+```{r}
+set.seed(1)
+x <- model.matrix(quality ~ ., wine_data)[, -1]
+y <- wine_data$quality
+train <- sample(1:nrow(x), nrow(x)/2)
+test <- (-train)
+y.test <- y[test]
+```
+
+```{r}
+library(pls)
+set.seed(2)
+pcr.fit <- pcr(quality ~ ., data = wine_data, scale = TRUE, validation = "CV")
+```
+
+```{r}
+summary(pcr.fit)
+```
+
+```{r}
+validationplot(pcr.fit, val.type = "MSEP")
+```
+
+```{r}
+set.seed(1)
+pcr.fit <- pcr(quality ~ ., data = wine_data, scale = TRUE, validation = "CV")
+validationplot(pcr.fit, val.type = "MSEP")
+```
+
+```{r}
+pcr.pred <- predict(pcr.fit, x[test, ], ncomp = 5)
+mean((pcr.pred - y.test)^2)
+```
+
+
+```{r}
+pcr.fit <- pcr(y ~ x, scale = TRUE, ncomp = 5)
+summary(pcr.fit)
+```
+
+## Partial least squares
+
+```{r}
+set.seed(1)
+x <- model.matrix(quality ~ ., wine_data)[, -1]
+y <- wine_data$quality
+train <- sample(1:nrow(x), nrow(x)/2)
+test <- (-train)
+y.test <- y[test]
+```
+
+```{r}
+pls.fit <- plsr(quality ~ ., data = wine_data, subset = train, scale = TRUE, validation = "CV")
+summary(pls.fit)
+```
+
+```{r}
+validationplot(pls.fit, val.type = "MSEP")
+```
+
+```{r}
+pls.pred <- predict(pls.fit, x[test, ], ncomp = 1)
+mean((pls.pred - y.test)^2)
+```
+
+```{r}
+pls.fit <- plsr(quality ~ ., data = wine_data, scale = TRUE, ncomp = 1)
+summary(pls.fit)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

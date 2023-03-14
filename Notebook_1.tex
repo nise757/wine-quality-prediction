@@ -1,0 +1,1167 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={R Notebook},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{R Notebook}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\hypertarget{chapter-2}{%
+\section{Chapter 2}\label{chapter-2}}
+
+\hypertarget{load-the-data}{%
+\subsection{Load the data}\label{load-the-data}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{wine\_data }\OtherTok{=} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"winequality{-}all.csv"}\NormalTok{, }\AttributeTok{header =}\NormalTok{ T, }\AttributeTok{na.strings =} \StringTok{"?"}\NormalTok{, }\AttributeTok{stringsAsFactors =}\NormalTok{ T)}
+\NormalTok{wine\_data}\SpecialCharTok{$}\NormalTok{color }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(wine\_data}\SpecialCharTok{$}\NormalTok{color, }\AttributeTok{levels=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{), }\AttributeTok{labels=}\FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}R\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}W\textquotesingle{}}\NormalTok{))}
+
+\NormalTok{drop }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"color"}\NormalTok{)}
+\NormalTok{wine\_data }\OtherTok{=}\NormalTok{ wine\_data[,}\SpecialCharTok{!}\NormalTok{(}\FunctionTok{names}\NormalTok{(wine\_data) }\SpecialCharTok{\%in\%}\NormalTok{ drop)]}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{capping}{%
+\subsection{Capping}\label{capping}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(scales)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'scales' was built under R version 4.2.2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{wine\_data}\SpecialCharTok{$}\NormalTok{fixed.acidity }\OtherTok{\textless{}{-}} \FunctionTok{squish}\NormalTok{(wine\_data}\SpecialCharTok{$}\NormalTok{fixed.acidity, }\FunctionTok{quantile}\NormalTok{(wine\_data}\SpecialCharTok{$}\NormalTok{fixed\_acidity, }\FunctionTok{c}\NormalTok{(.}\DecValTok{05}\NormalTok{, .}\DecValTok{95}\NormalTok{)))}
+
+\NormalTok{wd\_capped }\OtherTok{\textless{}{-}}\NormalTok{ wine\_data}
+
+\NormalTok{varlist }\OtherTok{\textless{}{-}} \FunctionTok{names}\NormalTok{(wine\_data)}
+\CommentTok{\# varlist \textless{}{-} varlist[{-}length(varlist)]}
+
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in}\NormalTok{ varlist) \{}
+\NormalTok{    var }\OtherTok{\textless{}{-}} \FunctionTok{eval}\NormalTok{(}\FunctionTok{parse}\NormalTok{(}\AttributeTok{text =} \FunctionTok{paste0}\NormalTok{(}\StringTok{"wine\_data$"}\NormalTok{, i)))}
+\NormalTok{    var }\OtherTok{\textless{}{-}} \FunctionTok{squish}\NormalTok{(var, }\FunctionTok{quantile}\NormalTok{(var, }\FunctionTok{c}\NormalTok{(.}\DecValTok{05}\NormalTok{, .}\DecValTok{95}\NormalTok{)))}
+\NormalTok{\}}
+
+
+\NormalTok{wd\_capped}\SpecialCharTok{$}\NormalTok{fixed.acidity }\OtherTok{\textless{}{-}} \FunctionTok{squish}\NormalTok{(wd\_capped}\SpecialCharTok{$}\NormalTok{fixed.acidity, }\FunctionTok{quantile}\NormalTok{(wd\_capped}\SpecialCharTok{$}\NormalTok{fixed\_acidity, }\FunctionTok{c}\NormalTok{(.}\DecValTok{05}\NormalTok{, .}\DecValTok{95}\NormalTok{)))}
+\NormalTok{wd\_capped}\SpecialCharTok{$}\NormalTok{volatile.acidity }\OtherTok{\textless{}{-}} \FunctionTok{squish}\NormalTok{(wd\_capped}\SpecialCharTok{$}\NormalTok{volatile.acidity, }\FunctionTok{quantile}\NormalTok{(wd\_capped}\SpecialCharTok{$}\NormalTok{volatile.acidity, }\FunctionTok{c}\NormalTok{(.}\DecValTok{05}\NormalTok{, .}\DecValTok{95}\NormalTok{)))    }
+\NormalTok{wd\_capped}\SpecialCharTok{$}\NormalTok{citric.acid}\OtherTok{\textless{}{-}} \FunctionTok{squish}\NormalTok{(wd\_capped}\SpecialCharTok{$}\NormalTok{citric.acid, }\FunctionTok{quantile}\NormalTok{(wd\_capped}\SpecialCharTok{$}\NormalTok{citric.acid, }\FunctionTok{c}\NormalTok{(.}\DecValTok{05}\NormalTok{, .}\DecValTok{95}\NormalTok{)))          }
+\NormalTok{wd\_capped}\SpecialCharTok{$}\NormalTok{residual.sugar }\OtherTok{\textless{}{-}} \FunctionTok{squish}\NormalTok{(wd\_capped}\SpecialCharTok{$}\NormalTok{residual.sugar, }\FunctionTok{quantile}\NormalTok{(wd\_capped}\SpecialCharTok{$}\NormalTok{residual.sugar, }\FunctionTok{c}\NormalTok{(.}\DecValTok{05}\NormalTok{, .}\DecValTok{95}\NormalTok{)))       }
+\NormalTok{wd\_capped}\SpecialCharTok{$}\NormalTok{chlorides }\OtherTok{\textless{}{-}} \FunctionTok{squish}\NormalTok{(wd\_capped}\SpecialCharTok{$}\NormalTok{chlorides, }\FunctionTok{quantile}\NormalTok{(wd\_capped}\SpecialCharTok{$}\NormalTok{chlorides, }\FunctionTok{c}\NormalTok{(.}\DecValTok{05}\NormalTok{, .}\DecValTok{95}\NormalTok{)))            }
+\NormalTok{wd\_capped}\SpecialCharTok{$}\NormalTok{free.sulfur.dioxide }\OtherTok{\textless{}{-}} \FunctionTok{squish}\NormalTok{(wd\_capped}\SpecialCharTok{$}\NormalTok{free.sulfur.dioxide, }\FunctionTok{quantile}\NormalTok{(wd\_capped}\SpecialCharTok{$}\NormalTok{free.sulfur.dioxide, }\FunctionTok{c}\NormalTok{(.}\DecValTok{05}\NormalTok{, .}\DecValTok{95}\NormalTok{)))  }
+\NormalTok{wd\_capped}\SpecialCharTok{$}\NormalTok{total.sulfur.dioxide }\OtherTok{\textless{}{-}} \FunctionTok{squish}\NormalTok{(wd\_capped}\SpecialCharTok{$}\NormalTok{total.sulfur.dioxide, }\FunctionTok{quantile}\NormalTok{(wd\_capped}\SpecialCharTok{$}\NormalTok{total.sulfur.dioxide, }\FunctionTok{c}\NormalTok{(.}\DecValTok{05}\NormalTok{, .}\DecValTok{95}\NormalTok{))) }
+\NormalTok{wd\_capped}\SpecialCharTok{$}\NormalTok{density }\OtherTok{\textless{}{-}} \FunctionTok{squish}\NormalTok{(wd\_capped}\SpecialCharTok{$}\NormalTok{density, }\FunctionTok{quantile}\NormalTok{(wd\_capped}\SpecialCharTok{$}\NormalTok{density, }\FunctionTok{c}\NormalTok{(.}\DecValTok{05}\NormalTok{, .}\DecValTok{95}\NormalTok{)))}
+\NormalTok{wd\_capped}\SpecialCharTok{$}\NormalTok{pH }\OtherTok{\textless{}{-}} \FunctionTok{squish}\NormalTok{(wd\_capped}\SpecialCharTok{$}\NormalTok{pH, }\FunctionTok{quantile}\NormalTok{(wd\_capped}\SpecialCharTok{$}\NormalTok{pH, }\FunctionTok{c}\NormalTok{(.}\DecValTok{05}\NormalTok{, .}\DecValTok{95}\NormalTok{)))                  }
+\NormalTok{wd\_capped}\SpecialCharTok{$}\NormalTok{sulphates }\OtherTok{\textless{}{-}} \FunctionTok{squish}\NormalTok{(wd\_capped}\SpecialCharTok{$}\NormalTok{sulphates, }\FunctionTok{quantile}\NormalTok{(wd\_capped}\SpecialCharTok{$}\NormalTok{sulphates, }\FunctionTok{c}\NormalTok{(.}\DecValTok{05}\NormalTok{, .}\DecValTok{95}\NormalTok{)))           }
+\NormalTok{wd\_capped}\SpecialCharTok{$}\NormalTok{alcohol }\OtherTok{\textless{}{-}} \FunctionTok{squish}\NormalTok{(wd\_capped}\SpecialCharTok{$}\NormalTok{alcohol, }\FunctionTok{quantile}\NormalTok{(wd\_capped}\SpecialCharTok{$}\NormalTok{alcohol, }\FunctionTok{c}\NormalTok{(.}\DecValTok{05}\NormalTok{, .}\DecValTok{95}\NormalTok{)))   }
+\NormalTok{wd\_capped}\SpecialCharTok{$}\NormalTok{quality }\OtherTok{\textless{}{-}} \FunctionTok{squish}\NormalTok{(wd\_capped}\SpecialCharTok{$}\NormalTok{quality, }\FunctionTok{quantile}\NormalTok{(wd\_capped}\SpecialCharTok{$}\NormalTok{quality, }\FunctionTok{c}\NormalTok{(.}\DecValTok{05}\NormalTok{, .}\DecValTok{95}\NormalTok{))) }
+
+\CommentTok{\# We compare the dimensions of the dataset before and after outlier removal}
+
+\FunctionTok{dim}\NormalTok{(wine\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 6497   12
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(wd\_capped)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 6497   12
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(wine\_data)[}\DecValTok{1}\NormalTok{] }\SpecialCharTok{{-}} \FunctionTok{dim}\NormalTok{(wd\_capped)[}\DecValTok{1}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(wine\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notebook_1_files/figure-latex/unnamed-chunk-2-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(wd\_capped)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notebook_1_files/figure-latex/unnamed-chunk-2-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{wine\_data }\OtherTok{\textless{}{-}}\NormalTok{ wd\_capped}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# pairs(wine\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{summary-of-the-data}{%
+\subsection{Summary of the data}\label{summary-of-the-data}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(wine\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  fixed.acidity    volatile.acidity  citric.acid    residual.sugar  
+##  Min.   : 3.800   Min.   :0.1600   Min.   :0.050   Min.   : 1.200  
+##  1st Qu.: 6.400   1st Qu.:0.2300   1st Qu.:0.250   1st Qu.: 1.800  
+##  Median : 7.000   Median :0.2900   Median :0.310   Median : 3.000  
+##  Mean   : 7.215   Mean   :0.3345   Mean   :0.315   Mean   : 5.334  
+##  3rd Qu.: 7.700   3rd Qu.:0.4000   3rd Qu.:0.390   3rd Qu.: 8.100  
+##  Max.   :15.900   Max.   :0.6700   Max.   :0.560   Max.   :15.000  
+##    chlorides       free.sulfur.dioxide total.sulfur.dioxide    density      
+##  Min.   :0.02800   Min.   : 6.00       Min.   : 19          Min.   :0.9899  
+##  1st Qu.:0.03800   1st Qu.:17.00       1st Qu.: 77          1st Qu.:0.9923  
+##  Median :0.04700   Median :29.00       Median :118          Median :0.9949  
+##  Mean   :0.05327   Mean   :30.03       Mean   :115          Mean   :0.9947  
+##  3rd Qu.:0.06500   3rd Qu.:41.00       3rd Qu.:156          3rd Qu.:0.9970  
+##  Max.   :0.10200   Max.   :61.00       Max.   :206          Max.   :0.9994  
+##        pH          sulphates         alcohol         quality    
+##  Min.   :2.970   Min.   :0.3500   Min.   : 9.00   Min.   :5.00  
+##  1st Qu.:3.110   1st Qu.:0.4300   1st Qu.: 9.50   1st Qu.:5.00  
+##  Median :3.210   Median :0.5100   Median :10.30   Median :6.00  
+##  Mean   :3.217   Mean   :0.5257   Mean   :10.48   Mean   :5.83  
+##  3rd Qu.:3.320   3rd Qu.:0.6000   3rd Qu.:11.30   3rd Qu.:6.00  
+##  Max.   :3.500   Max.   :0.7900   Max.   :12.70   Max.   :7.00
+\end{verbatim}
+
+\hypertarget{removal-of-outliers-interquartile-range}{%
+\section{Removal of outliers (Interquartile
+range)}\label{removal-of-outliers-interquartile-range}}
+
+References:
+\url{https://www.r-bloggers.com/2021/09/how-to-remove-outliers-in-r-3/}
+
+To begin, we must first identify the outliers in a dataset; typically,
+two methods are available. 1. z-scores 2. interquartile range
+
+\hypertarget{description-of-methods}{%
+\subsection{Description of methods}\label{description-of-methods}}
+
+\hypertarget{z-score-method}{%
+\subsection{z-score method}\label{z-score-method}}
+
+The z-score indicates the number of standard deviations a given value
+deviates from the mean. A z-score is calculated using the following
+formula:
+
+\[z = (X – \mu) / \sigma\] where:
+
+\(X\) is a single raw data value
+
+\(\mu\) is the population mean
+
+\(\sigma\) is the population standard deviation
+
+If an observation's z-score is less than -3 or larger than 3, it's
+considered an outlier.
+
+We implement this method below:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{z\_scores }\OtherTok{\textless{}{-}} \FunctionTok{as.data.frame}\NormalTok{(}\FunctionTok{sapply}\NormalTok{(wine\_data, }\ControlFlowTok{function}\NormalTok{(wine\_data) (}\FunctionTok{abs}\NormalTok{(wine\_data}\SpecialCharTok{{-}}\FunctionTok{mean}\NormalTok{(wine\_data))}\SpecialCharTok{/}\FunctionTok{sd}\NormalTok{(wine\_data))))    }
+\NormalTok{no\_outliers }\OtherTok{\textless{}{-}}\NormalTok{ z\_scores[}\SpecialCharTok{!}\FunctionTok{rowSums}\NormalTok{(z\_scores}\SpecialCharTok{\textgreater{}}\DecValTok{3}\NormalTok{), ]}
+\CommentTok{\# head(no\_outliers)}
+\FunctionTok{dim}\NormalTok{(wine\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 6497   12
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(no\_outliers)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 6369   12
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(wine\_data)[}\DecValTok{1}\NormalTok{] }\SpecialCharTok{{-}} \FunctionTok{dim}\NormalTok{(no\_outliers)[}\DecValTok{1}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 128
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(no\_outliers)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notebook_1_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+With the z-score method we see that we have 508 less observations in the
+dataset
+
+\hypertarget{interquartile-range-method}{%
+\subsection{Interquartile range
+method}\label{interquartile-range-method}}
+
+In a dataset, it is the difference between the 75th percentile (Q3) and
+the 25th percentile (Q1).
+
+The interquartile range (IQR) is a measurement of the spread of values
+in the middle 50\%.
+
+If an observation is 1.5 times the interquartile range more than the
+third quartile (Q3) or 1.5 times the interquartile range less than the
+first quartile (Q1), it is considered an outlier (Q1).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{varlist }\OtherTok{\textless{}{-}} \FunctionTok{names}\NormalTok{(wine\_data)}
+\CommentTok{\# varlist \textless{}{-} varlist[{-}length(varlist)]}
+
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in}\NormalTok{ varlist) \{}
+\NormalTok{    var }\OtherTok{\textless{}{-}} \FunctionTok{eval}\NormalTok{(}\FunctionTok{parse}\NormalTok{(}\AttributeTok{text =} \FunctionTok{paste0}\NormalTok{(}\StringTok{"wine\_data$"}\NormalTok{, i)))}
+\NormalTok{    Q1 }\OtherTok{\textless{}{-}} \FunctionTok{quantile}\NormalTok{(var, }\FloatTok{0.25}\NormalTok{)}
+\NormalTok{    Q3 }\OtherTok{\textless{}{-}} \FunctionTok{quantile}\NormalTok{(var, }\FloatTok{0.75}\NormalTok{)}
+\NormalTok{    iqr }\OtherTok{\textless{}{-}} \FunctionTok{IQR}\NormalTok{(var)}
+\NormalTok{    no\_outliers }\OtherTok{\textless{}{-}} \FunctionTok{subset}\NormalTok{(wine\_data, var }\SpecialCharTok{\textgreater{}}\NormalTok{ (Q1 }\SpecialCharTok{{-}} \FloatTok{1.5}\SpecialCharTok{*}\NormalTok{iqr) }\SpecialCharTok{\&}\NormalTok{ var }\SpecialCharTok{\textless{}}\NormalTok{ (Q3 }\SpecialCharTok{+} \FloatTok{1.5}\SpecialCharTok{*}\NormalTok{iqr) )}
+    
+\NormalTok{\}}
+
+\CommentTok{\# We compare the dimensions of the dataset before and after outlier removal}
+\FunctionTok{dim}\NormalTok{(wine\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 6497   12
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(no\_outliers)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 6497   12
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(wine\_data)[}\DecValTok{1}\NormalTok{] }\SpecialCharTok{{-}} \FunctionTok{dim}\NormalTok{(no\_outliers)[}\DecValTok{1}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(no\_outliers)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notebook_1_files/figure-latex/unnamed-chunk-6-1.pdf}
+With the z-score method we see that we have 228 less observations in the
+dataset
+
+We should probably figure out which method we want to use at some point.
+
+\hypertarget{chapter-6---linear-model-selection-and-regularization}{%
+\section{Chapter 6 - Linear model selection and
+regularization}\label{chapter-6---linear-model-selection-and-regularization}}
+
+\hypertarget{subset-selection-methods}{%
+\subsection{Subset selection methods}\label{subset-selection-methods}}
+
+\hypertarget{best-subset-selection}{%
+\subsubsection{Best Subset Selection}\label{best-subset-selection}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(leaps)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'leaps' was built under R version 4.2.2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Perform best subset selection using the regsubsets() function included}
+\CommentTok{\# in the leaps library}
+\NormalTok{regfit.full }\OtherTok{\textless{}{-}} \FunctionTok{regsubsets}\NormalTok{(quality }\SpecialCharTok{\textasciitilde{}}\NormalTok{ ., wine\_data, }\AttributeTok{nvmax =} \DecValTok{11}\NormalTok{)}
+
+\CommentTok{\# Summary of the full best subset selection model, the models with 1{-}11 variables}
+\CommentTok{\# are shown below}
+\CommentTok{\# shows the best set of variables for each model size}
+\FunctionTok{summary}\NormalTok{(regfit.full)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Subset selection object
+## Call: regsubsets.formula(quality ~ ., wine_data, nvmax = 11)
+## 11 Variables  (and intercept)
+##                      Forced in Forced out
+## fixed.acidity            FALSE      FALSE
+## volatile.acidity         FALSE      FALSE
+## citric.acid              FALSE      FALSE
+## residual.sugar           FALSE      FALSE
+## chlorides                FALSE      FALSE
+## free.sulfur.dioxide      FALSE      FALSE
+## total.sulfur.dioxide     FALSE      FALSE
+## density                  FALSE      FALSE
+## pH                       FALSE      FALSE
+## sulphates                FALSE      FALSE
+## alcohol                  FALSE      FALSE
+## 1 subsets of each size up to 11
+## Selection Algorithm: exhaustive
+##           fixed.acidity volatile.acidity citric.acid residual.sugar chlorides
+## 1  ( 1 )  " "           " "              " "         " "            " "      
+## 2  ( 1 )  " "           "*"              " "         " "            " "      
+## 3  ( 1 )  " "           "*"              " "         " "            " "      
+## 4  ( 1 )  " "           "*"              " "         "*"            " "      
+## 5  ( 1 )  " "           "*"              " "         "*"            " "      
+## 6  ( 1 )  " "           "*"              " "         "*"            " "      
+## 7  ( 1 )  " "           "*"              " "         "*"            " "      
+## 8  ( 1 )  " "           "*"              " "         "*"            " "      
+## 9  ( 1 )  "*"           "*"              " "         "*"            " "      
+## 10  ( 1 ) "*"           "*"              "*"         "*"            " "      
+## 11  ( 1 ) "*"           "*"              "*"         "*"            "*"      
+##           free.sulfur.dioxide total.sulfur.dioxide density pH  sulphates
+## 1  ( 1 )  " "                 " "                  " "     " " " "      
+## 2  ( 1 )  " "                 " "                  " "     " " " "      
+## 3  ( 1 )  " "                 " "                  " "     " " "*"      
+## 4  ( 1 )  " "                 " "                  " "     " " "*"      
+## 5  ( 1 )  " "                 "*"                  " "     " " "*"      
+## 6  ( 1 )  "*"                 "*"                  " "     " " "*"      
+## 7  ( 1 )  "*"                 "*"                  " "     "*" "*"      
+## 8  ( 1 )  "*"                 "*"                  "*"     "*" "*"      
+## 9  ( 1 )  "*"                 "*"                  "*"     "*" "*"      
+## 10  ( 1 ) "*"                 "*"                  "*"     "*" "*"      
+## 11  ( 1 ) "*"                 "*"                  "*"     "*" "*"      
+##           alcohol
+## 1  ( 1 )  "*"    
+## 2  ( 1 )  "*"    
+## 3  ( 1 )  "*"    
+## 4  ( 1 )  "*"    
+## 5  ( 1 )  "*"    
+## 6  ( 1 )  "*"    
+## 7  ( 1 )  "*"    
+## 8  ( 1 )  "*"    
+## 9  ( 1 )  "*"    
+## 10  ( 1 ) "*"    
+## 11  ( 1 ) "*"
+\end{verbatim}
+
+We now check to the different fitting criterion to see which model is
+best
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{reg.summary }\OtherTok{=} \FunctionTok{summary}\NormalTok{(regfit.full)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{3}\NormalTok{))}
+\FunctionTok{plot}\NormalTok{(reg.summary}\SpecialCharTok{$}\NormalTok{adjr2, }\AttributeTok{xlab =} \StringTok{"Number of Variables"}\NormalTok{ ,}
+\AttributeTok{ylab =} \StringTok{"Adjusted RSq"}\NormalTok{ , }\AttributeTok{type =} \StringTok{"l"}\NormalTok{)}
+
+\FunctionTok{plot}\NormalTok{ (reg.summary}\SpecialCharTok{$}\NormalTok{cp, }\AttributeTok{xlab =} \StringTok{"Number of Variables"}\NormalTok{ ,}
+\AttributeTok{ylab =} \StringTok{"Cp"}\NormalTok{ , }\AttributeTok{type =} \StringTok{"l"}\NormalTok{)}
+
+\FunctionTok{plot}\NormalTok{ (reg.summary}\SpecialCharTok{$}\NormalTok{bic, }\AttributeTok{xlab =} \StringTok{"Number of Variables"}\NormalTok{ ,}
+\AttributeTok{ylab =} \StringTok{"BIC"}\NormalTok{ , }\AttributeTok{type =} \StringTok{"l"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notebook_1_files/figure-latex/unnamed-chunk-9-1.pdf}
+
+\hypertarget{find-the-ideal-number-of-predictors-using-the-different-criterion}{%
+\subsection{Find the ideal number of predictors using the different
+criterion}\label{find-the-ideal-number-of-predictors-using-the-different-criterion}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Find the number of predictors that corresponds to the maximum adjusted Rsq val}
+\FunctionTok{which.max}\NormalTok{(reg.summary}\SpecialCharTok{$}\NormalTok{adjr2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 10
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Find the number of predictors that corresponds to the minimum adjusted Cp val}
+\FunctionTok{which.min}\NormalTok{(reg.summary}\SpecialCharTok{$}\NormalTok{cp)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 10
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Find the number of predictors that corresponds to the minimum adjusted BIC val}
+\FunctionTok{which.min}\NormalTok{(reg.summary}\SpecialCharTok{$}\NormalTok{bic)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 9
+\end{verbatim}
+
+\hypertarget{plot-which-models-indicate-the-smallest-statistic}{%
+\subsection{Plot which models indicate the smallest
+statistic}\label{plot-which-models-indicate-the-smallest-statistic}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(regfit.full, }\AttributeTok{scale =} \StringTok{"adjr2"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notebook_1_files/figure-latex/unnamed-chunk-11-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(regfit.full, }\AttributeTok{scale =} \StringTok{"Cp"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notebook_1_files/figure-latex/unnamed-chunk-11-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(regfit.full, }\AttributeTok{scale =} \StringTok{"bic"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notebook_1_files/figure-latex/unnamed-chunk-11-3.pdf}
+
+\hypertarget{see-the-coefficients-associated-with-the-best-model}{%
+\subsection{See the coefficients associated with the best
+model}\label{see-the-coefficients-associated-with-the-best-model}}
+
+\hypertarget{choosing-among-models-using-the-validation-set-approach-and-cross-validation}{%
+\subsection{Choosing among models using the validation-set approach and
+cross-validation}\label{choosing-among-models-using-the-validation-set-approach-and-cross-validation}}
+
+\hypertarget{cross-validation}{%
+\subsubsection{Cross validation}\label{cross-validation}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\NormalTok{train }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{FALSE}\NormalTok{), }\FunctionTok{nrow}\NormalTok{(wine\_data), }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{test }\OtherTok{\textless{}{-}}\NormalTok{ (}\SpecialCharTok{!}\NormalTok{train)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{regfit.best }\OtherTok{\textless{}{-}} \FunctionTok{regsubsets}\NormalTok{(quality }\SpecialCharTok{\textasciitilde{}}\NormalTok{ ., }\AttributeTok{data =}\NormalTok{ wine\_data[train, ], }\AttributeTok{nvmax =} \DecValTok{11}\NormalTok{)}
+\NormalTok{test.mat }\OtherTok{\textless{}{-}} \FunctionTok{model.matrix}\NormalTok{(quality }\SpecialCharTok{\textasciitilde{}}\NormalTok{ ., }\AttributeTok{data =}\NormalTok{ wine\_data[test, ])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{val.errors }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{11}\NormalTok{)}
+
+
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\DecValTok{11}\NormalTok{) \{}
+\NormalTok{    coefi }\OtherTok{\textless{}{-}} \FunctionTok{coef}\NormalTok{(regfit.best, }\AttributeTok{id =}\NormalTok{ i)}
+\NormalTok{    pred }\OtherTok{\textless{}{-}}\NormalTok{ test.mat[, }\FunctionTok{names}\NormalTok{(coefi)] }\SpecialCharTok{\%*\%}\NormalTok{ coefi}
+\NormalTok{    val.errors[i] }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{((wine\_data}\SpecialCharTok{$}\NormalTok{quality[test] }\SpecialCharTok{{-}}\NormalTok{ pred)}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}
+    
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{val.errors}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 0.4148673 0.3828393 0.3746997 0.3705519 0.3691098 0.3655426 0.3650684
+##  [8] 0.3639048 0.3616509 0.3616630 0.3618294
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{which.min}\NormalTok{(val.errors)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 9
+\end{verbatim}
+
+We find that the best model is on that contains 10 variables. Therefore
+we choose to use this model in our analysis.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{predict.regsubsets }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(object, newdata, id , ...) \{}
+\NormalTok{form }\OtherTok{\textless{}{-}} \FunctionTok{as.formula}\NormalTok{(object}\SpecialCharTok{$}\NormalTok{call[[}\DecValTok{2}\NormalTok{]])}
+\NormalTok{mat }\OtherTok{\textless{}{-}} \FunctionTok{model.matrix}\NormalTok{(form, newdata )}
+\NormalTok{coefi }\OtherTok{\textless{}{-}} \FunctionTok{coef}\NormalTok{(object, }\AttributeTok{id =}\NormalTok{ id)}
+\NormalTok{xvars }\OtherTok{\textless{}{-}} \FunctionTok{names}\NormalTok{ (coefi)}
+\NormalTok{mat[, xvars ] }\SpecialCharTok{\%*\%}\NormalTok{ coefi}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{regfit.best }\OtherTok{\textless{}{-}} \FunctionTok{regsubsets}\NormalTok{(quality }\SpecialCharTok{\textasciitilde{}}\NormalTok{ ., }\AttributeTok{data =}\NormalTok{ wine\_data, }\AttributeTok{nvmax =} \DecValTok{11}\NormalTok{)}
+\FunctionTok{coef}\NormalTok{(regfit.best, }\DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##          (Intercept)        fixed.acidity     volatile.acidity 
+##         68.960350471          0.074094737         -1.204312818 
+##          citric.acid       residual.sugar  free.sulfur.dioxide 
+##         -0.132337321          0.045462743          0.005868213 
+## total.sulfur.dioxide              density                   pH 
+##         -0.002382853        -68.228268139          0.504158979 
+##            sulphates              alcohol 
+##          0.883924623          0.230180918
+\end{verbatim}
+
+Now try to choose amongst the models of different sizes using
+cross-validation (k-fold) 10-folds
+
+Must perform best subset selection with each of the k training sets.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{k }\OtherTok{\textless{}{-}} \DecValTok{5}
+\NormalTok{n }\OtherTok{\textless{}{-}} \FunctionTok{nrow}\NormalTok{(wine\_data)}
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\NormalTok{folds }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\FunctionTok{rep}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\NormalTok{k, }\AttributeTok{length =}\NormalTok{ n))}
+\NormalTok{cv.errors }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\ConstantTok{NA}\NormalTok{, k, }\DecValTok{11}\NormalTok{, }\AttributeTok{dimnames =} \FunctionTok{list}\NormalTok{(}\ConstantTok{NULL}\NormalTok{, }\FunctionTok{paste}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{11}\NormalTok{)))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{for}\NormalTok{ (j }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{k) \{}
+\NormalTok{    best.fit }\OtherTok{\textless{}{-}} \FunctionTok{regsubsets}\NormalTok{(quality }\SpecialCharTok{\textasciitilde{}}\NormalTok{ ., }\AttributeTok{data =}\NormalTok{ wine\_data[folds }\SpecialCharTok{!=}\NormalTok{ j, ], }\AttributeTok{nvmax =} \DecValTok{11}\NormalTok{)}
+    
+    \ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\DecValTok{11}\NormalTok{) \{}
+\NormalTok{        pred }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(best.fit, wine\_data[folds }\SpecialCharTok{==}\NormalTok{ j, ], }\AttributeTok{id =}\NormalTok{ i)}
+\NormalTok{        cv.errors[j, i] }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{((wine\_data}\SpecialCharTok{$}\NormalTok{quality[folds }\SpecialCharTok{==}\NormalTok{ j] }\SpecialCharTok{{-}}\NormalTok{ pred)}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}
+\NormalTok{    \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mean.cv.errors }\OtherTok{\textless{}{-}} \FunctionTok{apply}\NormalTok{(cv.errors, }\DecValTok{2}\NormalTok{, mean)}
+\NormalTok{mean.cv.errors}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##         1         2         3         4         5         6         7         8 
+## 0.4136115 0.3841631 0.3771888 0.3727125 0.3712452 0.3674260 0.3677570 0.3667030 
+##         9        10        11 
+## 0.3648552 0.3649498 0.3649542
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{min}\NormalTok{(mean.cv.errors)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.3648552
+\end{verbatim}
+
+We see that cross validation selects a 9 variable model.
+
+We now perform best subset selection on the full data set in order to
+obtain this model
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{reg.best }\OtherTok{\textless{}{-}} \FunctionTok{regsubsets}\NormalTok{(quality }\SpecialCharTok{\textasciitilde{}}\NormalTok{ ., }\AttributeTok{data =}\NormalTok{ wine\_data, }\AttributeTok{nvmax =} \DecValTok{11}\NormalTok{)}
+\FunctionTok{coef}\NormalTok{(reg.best, }\DecValTok{9}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##          (Intercept)        fixed.acidity     volatile.acidity 
+##         70.003827333          0.069246882         -1.153656143 
+##       residual.sugar  free.sulfur.dioxide total.sulfur.dioxide 
+##          0.045698051          0.005878583         -0.002447426 
+##              density                   pH            sulphates 
+##        -69.311834099          0.520147565          0.874475435 
+##              alcohol 
+##          0.227325902
+\end{verbatim}
+
+\hypertarget{ridge-regression-and-the-lasso}{%
+\subsection{Ridge-regression and the
+lasso}\label{ridge-regression-and-the-lasso}}
+
+\hypertarget{ridge-regression}{%
+\subsection{Ridge-regression}\label{ridge-regression}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{model.matrix}\NormalTok{(quality }\SpecialCharTok{\textasciitilde{}}\NormalTok{ ., wine\_data)[, }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{]}
+\NormalTok{y }\OtherTok{\textless{}{-}}\NormalTok{ wine\_data}\SpecialCharTok{$}\NormalTok{quality}
+\NormalTok{train }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\FunctionTok{nrow}\NormalTok{(x), }\FunctionTok{nrow}\NormalTok{(x)}\SpecialCharTok{/}\DecValTok{2}\NormalTok{)}
+\NormalTok{test }\OtherTok{\textless{}{-}}\NormalTok{ (}\SpecialCharTok{{-}}\NormalTok{train)}
+\NormalTok{y.test }\OtherTok{\textless{}{-}}\NormalTok{ y[test]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(glmnet)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'glmnet' was built under R version 4.2.2
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: Matrix
+\end{verbatim}
+
+\begin{verbatim}
+## Loaded glmnet 4.1-6
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{grid }\OtherTok{\textless{}{-}} \DecValTok{10}\SpecialCharTok{\^{}}\FunctionTok{seq}\NormalTok{(}\DecValTok{10}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{, }\AttributeTok{length =} \DecValTok{100}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ridge.mod }\OtherTok{\textless{}{-}} \FunctionTok{glmnet}\NormalTok{(x[train, ], y[train], }\AttributeTok{alpha =} \DecValTok{0}\NormalTok{, }\AttributeTok{lambda =}\NormalTok{ grid)}
+\FunctionTok{plot}\NormalTok{(ridge.mod)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notebook_1_files/figure-latex/unnamed-chunk-25-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\NormalTok{cv.out }\OtherTok{\textless{}{-}} \FunctionTok{cv.glmnet}\NormalTok{(x[train, ], y[train], }\AttributeTok{alpha =} \DecValTok{0}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(cv.out)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notebook_1_files/figure-latex/unnamed-chunk-26-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bestlam }\OtherTok{\textless{}{-}}\NormalTok{ cv.out}\SpecialCharTok{$}\NormalTok{lambda.min}
+\NormalTok{lasso.pred }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(ridge.mod, }\AttributeTok{s =}\NormalTok{ bestlam, }\AttributeTok{newx =}\NormalTok{ x[test, ])}
+\FunctionTok{mean}\NormalTok{((lasso.pred }\SpecialCharTok{{-}}\NormalTok{ y.test)}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.3605988
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{out }\OtherTok{\textless{}{-}} \FunctionTok{glmnet}\NormalTok{(x, y, }\AttributeTok{alpha =} \DecValTok{0}\NormalTok{, }\AttributeTok{lambda =}\NormalTok{ grid)}
+\NormalTok{ridge.coef }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(out, }\AttributeTok{type =} \StringTok{"coefficients"}\NormalTok{, }\AttributeTok{s =}\NormalTok{ bestlam)[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{12}\NormalTok{, ]}
+\NormalTok{ridge.coef}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##          (Intercept)        fixed.acidity     volatile.acidity 
+##         40.934526532          0.043956261         -1.134589970 
+##          citric.acid       residual.sugar            chlorides 
+##         -0.062270550          0.030537484         -1.173505845 
+##  free.sulfur.dioxide total.sulfur.dioxide              density 
+##          0.005148968         -0.002015011        -39.330410551 
+##                   pH            sulphates              alcohol 
+##          0.345771173          0.785362246          0.243205550
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ridge.coef[ridge.coef }\SpecialCharTok{!=} \DecValTok{0}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##          (Intercept)        fixed.acidity     volatile.acidity 
+##         40.934526532          0.043956261         -1.134589970 
+##          citric.acid       residual.sugar            chlorides 
+##         -0.062270550          0.030537484         -1.173505845 
+##  free.sulfur.dioxide total.sulfur.dioxide              density 
+##          0.005148968         -0.002015011        -39.330410551 
+##                   pH            sulphates              alcohol 
+##          0.345771173          0.785362246          0.243205550
+\end{verbatim}
+
+\hypertarget{the-lasso}{%
+\subsection{The lasso}\label{the-lasso}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{model.matrix}\NormalTok{(quality }\SpecialCharTok{\textasciitilde{}}\NormalTok{ ., wine\_data)[, }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{]}
+\NormalTok{y }\OtherTok{\textless{}{-}}\NormalTok{ wine\_data}\SpecialCharTok{$}\NormalTok{quality}
+\NormalTok{train }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\FunctionTok{nrow}\NormalTok{(x), }\FunctionTok{nrow}\NormalTok{(x)}\SpecialCharTok{/}\DecValTok{2}\NormalTok{)}
+\NormalTok{test }\OtherTok{\textless{}{-}}\NormalTok{ (}\SpecialCharTok{{-}}\NormalTok{train)}
+\NormalTok{y.test }\OtherTok{\textless{}{-}}\NormalTok{ y[test]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(glmnet)}
+\NormalTok{grid }\OtherTok{\textless{}{-}} \DecValTok{10}\SpecialCharTok{\^{}}\FunctionTok{seq}\NormalTok{(}\DecValTok{10}\NormalTok{, }\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{, }\AttributeTok{length =} \DecValTok{100}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lasso.mod }\OtherTok{\textless{}{-}} \FunctionTok{glmnet}\NormalTok{(x[train, ], y[train], }\AttributeTok{alpha =} \DecValTok{1}\NormalTok{, }\AttributeTok{lambda =}\NormalTok{ grid)}
+\FunctionTok{plot}\NormalTok{(lasso.mod)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in regularize.values(x, y, ties, missing(ties), na.rm = na.rm):
+## collapsing to unique 'x' values
+\end{verbatim}
+
+\includegraphics{Notebook_1_files/figure-latex/unnamed-chunk-32-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\NormalTok{cv.out }\OtherTok{\textless{}{-}} \FunctionTok{cv.glmnet}\NormalTok{(x[train, ], y[train], }\AttributeTok{alpha =} \DecValTok{1}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(cv.out)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notebook_1_files/figure-latex/unnamed-chunk-33-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bestlam }\OtherTok{\textless{}{-}}\NormalTok{ cv.out}\SpecialCharTok{$}\NormalTok{lambda.min}
+\NormalTok{lasso.pred }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(lasso.mod, }\AttributeTok{s =}\NormalTok{ bestlam, }\AttributeTok{newx =}\NormalTok{ x[test, ])}
+\FunctionTok{mean}\NormalTok{((lasso.pred }\SpecialCharTok{{-}}\NormalTok{ y.test)}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.3631217
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{out }\OtherTok{\textless{}{-}} \FunctionTok{glmnet}\NormalTok{(x, y, }\AttributeTok{alpha =} \DecValTok{1}\NormalTok{, }\AttributeTok{lambda =}\NormalTok{ grid)}
+\NormalTok{lasso.coef }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(out, }\AttributeTok{type =} \StringTok{"coefficients"}\NormalTok{, }\AttributeTok{s =}\NormalTok{ bestlam)[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{12}\NormalTok{, ]}
+\NormalTok{lasso.coef}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##          (Intercept)        fixed.acidity     volatile.acidity 
+##          2.474306957          0.000000000         -1.189634457 
+##          citric.acid       residual.sugar            chlorides 
+##          0.000000000          0.014669290         -0.754664550 
+##  free.sulfur.dioxide total.sulfur.dioxide              density 
+##          0.003832357         -0.001368393          0.000000000 
+##                   pH            sulphates              alcohol 
+##          0.093997115          0.634427372          0.297747749
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lasso.coef[lasso.coef }\SpecialCharTok{!=} \DecValTok{0}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##          (Intercept)     volatile.acidity       residual.sugar 
+##          2.474306957         -1.189634457          0.014669290 
+##            chlorides  free.sulfur.dioxide total.sulfur.dioxide 
+##         -0.754664550          0.003832357         -0.001368393 
+##                   pH            sulphates              alcohol 
+##          0.093997115          0.634427372          0.297747749
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lasso.coef[lasso.coef }\SpecialCharTok{==} \DecValTok{0}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## fixed.acidity   citric.acid       density 
+##             0             0             0
+\end{verbatim}
+
+\hypertarget{princpal-components-regression}{%
+\subsection{Princpal components
+regression}\label{princpal-components-regression}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{model.matrix}\NormalTok{(quality }\SpecialCharTok{\textasciitilde{}}\NormalTok{ ., wine\_data)[, }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{]}
+\NormalTok{y }\OtherTok{\textless{}{-}}\NormalTok{ wine\_data}\SpecialCharTok{$}\NormalTok{quality}
+\NormalTok{train }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\FunctionTok{nrow}\NormalTok{(x), }\FunctionTok{nrow}\NormalTok{(x)}\SpecialCharTok{/}\DecValTok{2}\NormalTok{)}
+\NormalTok{test }\OtherTok{\textless{}{-}}\NormalTok{ (}\SpecialCharTok{{-}}\NormalTok{train)}
+\NormalTok{y.test }\OtherTok{\textless{}{-}}\NormalTok{ y[test]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(pls)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'pls' was built under R version 4.2.2
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'pls'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:stats':
+## 
+##     loadings
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{2}\NormalTok{)}
+\NormalTok{pcr.fit }\OtherTok{\textless{}{-}} \FunctionTok{pcr}\NormalTok{(quality }\SpecialCharTok{\textasciitilde{}}\NormalTok{ ., }\AttributeTok{data =}\NormalTok{ wine\_data, }\AttributeTok{scale =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{validation =} \StringTok{"CV"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(pcr.fit)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Data:    X dimension: 6497 11 
+##  Y dimension: 6497 1
+## Fit method: svdpc
+## Number of components considered: 11
+## 
+## VALIDATION: RMSEP
+## Cross-validated using 10 random segments.
+##        (Intercept)  1 comps  2 comps  3 comps  4 comps  5 comps  6 comps
+## CV          0.7312   0.7252   0.6807   0.6651   0.6478   0.6327   0.6246
+## adjCV       0.7312   0.7252   0.6807   0.6651   0.6477   0.6327   0.6245
+##        7 comps  8 comps  9 comps  10 comps  11 comps
+## CV      0.6243   0.6238   0.6045    0.6047    0.6038
+## adjCV   0.6242   0.6238   0.6045    0.6046    0.6038
+## 
+## TRAINING: % variance explained
+##          1 comps  2 comps  3 comps  4 comps  5 comps  6 comps  7 comps  8 comps
+## X         30.154    53.23    67.55    76.24    81.72    87.12    91.63    94.88
+## quality    1.628    13.39    17.34    21.61    25.23    27.18    27.28    27.41
+##          9 comps  10 comps  11 comps
+## X          97.81     99.71    100.00
+## quality    31.86     31.86     32.07
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{validationplot}\NormalTok{(pcr.fit, }\AttributeTok{val.type =} \StringTok{"MSEP"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notebook_1_files/figure-latex/unnamed-chunk-41-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\NormalTok{pcr.fit }\OtherTok{\textless{}{-}} \FunctionTok{pcr}\NormalTok{(quality }\SpecialCharTok{\textasciitilde{}}\NormalTok{ ., }\AttributeTok{data =}\NormalTok{ wine\_data, }\AttributeTok{scale =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{validation =} \StringTok{"CV"}\NormalTok{)}
+\FunctionTok{validationplot}\NormalTok{(pcr.fit, }\AttributeTok{val.type =} \StringTok{"MSEP"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notebook_1_files/figure-latex/unnamed-chunk-42-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pcr.pred }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(pcr.fit, x[test, ], }\AttributeTok{ncomp =} \DecValTok{5}\NormalTok{)}
+\FunctionTok{mean}\NormalTok{((pcr.pred }\SpecialCharTok{{-}}\NormalTok{ y.test)}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.3942515
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pcr.fit }\OtherTok{\textless{}{-}} \FunctionTok{pcr}\NormalTok{(y }\SpecialCharTok{\textasciitilde{}}\NormalTok{ x, }\AttributeTok{scale =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{ncomp =} \DecValTok{5}\NormalTok{)}
+\FunctionTok{summary}\NormalTok{(pcr.fit)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Data:    X dimension: 6497 11 
+##  Y dimension: 6497 1
+## Fit method: svdpc
+## Number of components considered: 5
+## TRAINING: % variance explained
+##    1 comps  2 comps  3 comps  4 comps  5 comps
+## X   30.154    53.23    67.55    76.24    81.72
+## y    1.628    13.39    17.34    21.61    25.23
+\end{verbatim}
+
+\hypertarget{partial-least-squares}{%
+\subsection{Partial least squares}\label{partial-least-squares}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{model.matrix}\NormalTok{(quality }\SpecialCharTok{\textasciitilde{}}\NormalTok{ ., wine\_data)[, }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{]}
+\NormalTok{y }\OtherTok{\textless{}{-}}\NormalTok{ wine\_data}\SpecialCharTok{$}\NormalTok{quality}
+\NormalTok{train }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\FunctionTok{nrow}\NormalTok{(x), }\FunctionTok{nrow}\NormalTok{(x)}\SpecialCharTok{/}\DecValTok{2}\NormalTok{)}
+\NormalTok{test }\OtherTok{\textless{}{-}}\NormalTok{ (}\SpecialCharTok{{-}}\NormalTok{train)}
+\NormalTok{y.test }\OtherTok{\textless{}{-}}\NormalTok{ y[test]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pls.fit }\OtherTok{\textless{}{-}} \FunctionTok{plsr}\NormalTok{(quality }\SpecialCharTok{\textasciitilde{}}\NormalTok{ ., }\AttributeTok{data =}\NormalTok{ wine\_data, }\AttributeTok{subset =}\NormalTok{ train, }\AttributeTok{scale =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{validation =} \StringTok{"CV"}\NormalTok{)}
+\FunctionTok{summary}\NormalTok{(pls.fit)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Data:    X dimension: 3248 11 
+##  Y dimension: 3248 1
+## Fit method: kernelpls
+## Number of components considered: 11
+## 
+## VALIDATION: RMSEP
+## Cross-validated using 10 random segments.
+##        (Intercept)  1 comps  2 comps  3 comps  4 comps  5 comps  6 comps
+## CV          0.7323   0.6456   0.6211   0.6130   0.6096   0.6083   0.6080
+## adjCV       0.7323   0.6456   0.6211   0.6129   0.6095   0.6082   0.6079
+##        7 comps  8 comps  9 comps  10 comps  11 comps
+## CV      0.6072   0.6072   0.6072    0.6072    0.6072
+## adjCV   0.6071   0.6071   0.6071    0.6071    0.6071
+## 
+## TRAINING: % variance explained
+##          1 comps  2 comps  3 comps  4 comps  5 comps  6 comps  7 comps  8 comps
+## X          22.67    38.37    58.38    70.97    78.71    84.36    84.86    88.20
+## quality    22.46    28.36    30.26    31.07    31.37    31.44    31.66    31.66
+##          9 comps  10 comps  11 comps
+## X          91.91     96.16    100.00
+## quality    31.66     31.66     31.66
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{validationplot}\NormalTok{(pls.fit, }\AttributeTok{val.type =} \StringTok{"MSEP"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notebook_1_files/figure-latex/unnamed-chunk-47-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pls.pred }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(pls.fit, x[test, ], }\AttributeTok{ncomp =} \DecValTok{1}\NormalTok{)}
+\FunctionTok{mean}\NormalTok{((pls.pred }\SpecialCharTok{{-}}\NormalTok{ y.test)}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.4068395
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pls.fit }\OtherTok{\textless{}{-}} \FunctionTok{plsr}\NormalTok{(quality }\SpecialCharTok{\textasciitilde{}}\NormalTok{ ., }\AttributeTok{data =}\NormalTok{ wine\_data, }\AttributeTok{scale =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{ncomp =} \DecValTok{1}\NormalTok{)}
+\FunctionTok{summary}\NormalTok{(pls.fit)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Data:    X dimension: 6497 11 
+##  Y dimension: 6497 1
+## Fit method: kernelpls
+## Number of components considered: 1
+## TRAINING: % variance explained
+##          1 comps
+## X          22.53
+## quality    23.15
+\end{verbatim}
+
+\end{document}
