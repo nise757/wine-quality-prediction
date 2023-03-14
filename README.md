@@ -1,6 +1,6 @@
 # Wine Quality Prediction
 
-This project focuses on predicting wine quality from a combination of data from red and white wines of the Portuguese wine "Vinho Verde". 
+This project focuses on predicting wine quality from a combination of data from red and white wines (Count = 6,397) of the Portuguese wine "Vinho Verde". 
 Combining the two data sets and cleaning it for outliers - [Capping](https://www.educative.io/answers/how-to-cap-outliers-from-a-series-dataframe-column-in-pandas). Various subset selection methods were experimented with to come up with the final model. 
 
 Additionally, cross-validation methods were used to evaluate the models on different sets of training and test data. The final model that most accurately predicts wine quality is a *9-parameter linear regression model* with parameters determined via best subset selection.
@@ -41,6 +41,9 @@ Additionally, cross-validation methods were used to evaluate the models on diffe
 ## Correlation Plot
 ![Correlation](https://github.com/nise757/wine-quality-prediction/blob/main/Outputs/corrplot.png)
 
+## Adjusted R-squared, Mallows Cp & BIC (For Parameter Selection)
+![r2CpBIC](https://user-images.githubusercontent.com/124890367/225135657-38d22887-d86f-4d77-989c-207d79efe808.png)
+
 ## Principal Components Regression
 ![PCR](https://user-images.githubusercontent.com/124890367/225134951-48963fd6-fcb1-45a7-bae7-50324bf3aaac.png)
 
@@ -48,16 +51,20 @@ Additionally, cross-validation methods were used to evaluate the models on diffe
 ![PartialLS](https://user-images.githubusercontent.com/124890367/225135216-ff49409d-88d0-43cb-b74d-26e0335e94bb.png)
 
 ## LASSO Regression
-par(mfrow(c(1,2))
+
+#### Coefficients
 ![lasso1](https://user-images.githubusercontent.com/124890367/225135472-30e3579f-9cff-44f8-800f-3896ec8c4c94.png)
+
+#### MSE
 ![lasso2](https://user-images.githubusercontent.com/124890367/225135505-c159b5d9-fec1-4a7f-8ac6-9dd02d315535.png)
 
 ## Ridge Regression
-![ridge1](https://user-images.githubusercontent.com/124890367/225135534-1e633770-35b9-4d0f-8f37-f42c387bf53a.png)
-![ridge2](https://user-images.githubusercontent.com/124890367/225135551-7149d332-7509-4403-a015-a02c70810072.png)
 
-## Adjusted R-squared, Mallows Cp & BIC (For Parameter Selection)
-![r2CpBIC](https://user-images.githubusercontent.com/124890367/225135657-38d22887-d86f-4d77-989c-207d79efe808.png)
+#### Coefficients
+![ridge1](https://user-images.githubusercontent.com/124890367/225135534-1e633770-35b9-4d0f-8f37-f42c387bf53a.png)
+
+#### MSE
+![ridge2](https://user-images.githubusercontent.com/124890367/225135551-7149d332-7509-4403-a015-a02c70810072.png)
 
 
 
